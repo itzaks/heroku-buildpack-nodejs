@@ -308,6 +308,15 @@ restore_cache() {
   meta_time "restore-cache-time" "$restore_cache_start_time"
 }
 
+
+function cat_npm_debug_log() {
+ if [ -f $BUILD_DIR/npm-debug.log ]; then
+   cat $BUILD_DIR/npm-debug.log
+ fi
+}
+
+trap cat_npm_debug_log EXIT
+
 meta_set "build-step" "restore-cache"
 restore_cache | output "$LOG_FILE"
 
