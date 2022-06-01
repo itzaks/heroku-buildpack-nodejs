@@ -310,8 +310,8 @@ restore_cache() {
 
 
 function cat_npm_debug_log() {
- if [ -f $BUILD_DIR/npm-debug.log ]; then
-   cat $BUILD_DIR/npm-debug.log
+ if [ -f $BUILD_DIR/build.log ]; then
+   cat $BUILD_DIR/build.log
  fi
 }
 
